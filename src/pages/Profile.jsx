@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Profile = () => {
+  const { t } = useTranslation(["common", "profile"]);
   return (
     <>
       <div>
+      <h1 className="text-center">{t("common:profile")}</h1>
         <form className="max-w-sm mx-auto">
           <div className="mb-5">
             <label
               htmlFor="name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your name
+              {t("profile:name")}
             </label>
             <input
               type="name"
@@ -25,7 +28,7 @@ const Profile = () => {
               htmlFor="password"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your password
+              {t("profile:age")}
             </label>
             <input
               type="password"
@@ -38,7 +41,7 @@ const Profile = () => {
             type="submit"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            Submit
+            {t("common:submit")}
           </button>
         </form>
       </div>

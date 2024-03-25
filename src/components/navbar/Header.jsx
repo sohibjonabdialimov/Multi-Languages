@@ -1,7 +1,20 @@
-import React from "react";
+import i18next from "i18next";
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { i18n, t } = useTranslation(["common"]);
+
+	useEffect(() => {
+		if (localStorage.getItem("i18nextLng")?.length > 2) {
+			i18next.changeLanguage("en");
+		}
+	}, []);
+
+	const handleLanguageChange = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
   return (
     <div className="h-[80px] bg-slate-800 text-white pt-7">
       <div className="flex justify-between items-center w-[80%] mx-auto ">
@@ -13,7 +26,7 @@ const Header = () => {
             <Link to={"/profile"}>Profile</Link>
           </li>
         </ul>
-        <select className="text-black">
+        <select value={localStorage.getItem("i18nextLng")} onChange={handleLanguageChange} className="text-black">
           <option value="uz">Uzbek</option>
           <option value="en">English</option>
           <option value="ru">Russian</option>
