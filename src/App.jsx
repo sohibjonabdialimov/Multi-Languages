@@ -8,10 +8,12 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/profile" element={<Profile />} />
-      </Routes>
+      <div className="w-[80%] mx-auto pt-8">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
     </>
   );
 }
