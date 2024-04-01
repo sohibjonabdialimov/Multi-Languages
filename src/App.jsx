@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Header />
+      <h1>Multi Languages</h1>
       <div className="w-[80%] mx-auto pt-8">
         <Routes>
           <Route exact path="/" element={<Home />} />
